@@ -1,0 +1,8 @@
+<div>
+  <h3><%= link_to listing.title, listing %></h3>
+  <h4><%= listing.city %>, <%= listing.country.name%></h4>
+  <p>
+    <%= listing.bed_count %> 🛏, <%= listing.bedroom_count %> 🏠, <%= listing.bathroom_count %> 🛀,
+  </p>
+  <p><%= format_cents(listing.night_fee_cents) %> per night</p>
+</div>

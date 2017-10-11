@@ -5,6 +5,12 @@ class ListingsController < ApplicationController
   # GET /listings.json
   def index
     @listings = Listing.all
+    @spain_listings = Listing.where(country_code: 'es')
+    @france_listings = Listing.where(country_code: 'fr')
+    @europe_listings = @spain_listings | @france_listings
+    @over_100_listings = Listing.where('night_fee_cents > ? ', 9999)
+
+    @europe_under_100_listings = @europe_listings - @over_100_listings
   end
 
   # GET /listings/1

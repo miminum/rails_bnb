@@ -40,6 +40,27 @@
   </tbody>
 </table>
 
+<details>
+  <summary>
+    <h2>European Listings</h2>
+  </summary> 
+    <%= render @europe_listings %>
+</details>
+
+<details>
+  <summary>
+    <h2>Over $100 Listings</h2>
+  </summary> 
+    <%= render @over_100_listings %>
+</details>
+
+<details>
+  <summary>
+    <h2>European Listings under $100</h2>
+  </summary> 
+    <%= render @europe_under_100_listings %>
+</details>
+
 <br>
 
 <%= link_to 'New Listing', new_listing_path %>
