@@ -10,11 +10,13 @@ class ListingsController < ApplicationController
   # GET /listings/1
   # GET /listings/1.json
   def show
+    
   end
 
   # GET /listings/new
   def new
     @listing = Listing.new
+    
   end
 
   # GET /listings/1/edit
@@ -25,6 +27,8 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
+    byebug
+    @dollar_conversion = Money.new(cents, "AUD").format
 
     respond_to do |format|
       if @listing.save

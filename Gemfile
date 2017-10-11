@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'countries'
 gem 'devise'
 gem 'geocoder'
+gem 'money-rails', '~>1'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
