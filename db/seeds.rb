@@ -7,10 +7,10 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Listing.create!([
-    { title: 'White House', street_address: '1600 Pennsylvania Avenue Avenue NW', city: 'Washington DC', country_code: 'us', bed_count: rand(1..5), bedroom_count: 4, bathroom_count: 4, description: 'This place trumps all your previous airbnb stays', night_fee_cents: 100000, cleaning_fee_cents: 50000},
-    {title: 'Eiffel Tower', street_address: 'Champ de Mars, 5 Avenue Anatole France', city: 'Paris', country_code: 'fr', bed_count: rand(1..5), bedroom_count: 1, bathroom_count: 1, description: 'This place trumps all your previous airbnb stays', night_fee_cents: 50000, cleaning_fee_cents: 10000}
-    { title: 'Big Ben', street_address: 'Big Ben, Westminster', city: 'London', country_code: 'gb', night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
-    { title: 'Eureka Tower', street_address: '7 Riverside Quay', city: 'Southbank', country_code: 'au', night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
-    { title: 'Burj Khalifa', street_address: '1 Sheikh Mohammed bin Rashid Blvd', city: 'Dubai', country_code: 'ae', night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) }
-    )]
+    { title: 'White House', street_address: '1600 Pennsylvania Avenue NW', city: 'Washington, DC', country_code: 'us', bed_count: rand(1..5), night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
+    { title: 'Eiffel Tower', street_address: 'Champ de Mars, 5 Avenue Anatole France', city: 'Paris', country_code: 'fr', bed_count: rand(1..5), night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
+    { title: 'Big Ben', street_address: 'Big Ben, Westminster', city: 'London', country_code: 'gb', bed_count: rand(1..5), night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
+    { title: 'Eureka Tower', street_address: '7 Riverside Quay', city: 'Southbank', country_code: 'au', bed_count: rand(1..5), night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) },
+    { title: 'Burj Khalifa', street_address: '1 Sheikh Mohammed bin Rashid Blvd', city: 'Dubai', country_code: 'ae', bed_count: rand(1..5), night_fee_cents: rand(2000..20000), cleaning_fee_cents: rand(1000..10000) }
+])
 

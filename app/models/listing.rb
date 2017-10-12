@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
     validates :title, presence: true
-    validates :stree_address, presence: true
+    validates :street_address, presence: true
     validates :city, presence: true
     validates :country_code, presence: true
     validates :country, presence: {
