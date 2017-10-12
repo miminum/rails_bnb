@@ -3,7 +3,7 @@ class Listing < ApplicationRecord
     validates :stree_address, presence: true
     validates :city, presence: true
     validates :country_code, presence: true
-    validates :country, presence: true {
+    validates :country, presence: {
       message: -> (listing, data) { "Invalid country code: #{listing.country_code}" }
     }
     validates :bed_count, numericality: { greater_than: 0}
