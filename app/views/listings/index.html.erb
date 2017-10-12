@@ -61,6 +61,17 @@
     <%= render @europe_under_100_listings %>
 </details>
 
+
 <br>
 
-<%= link_to 'New Listing', new_listing_path %>
+
+<div>
+  <%= link_to 'New Listing', new_listing_path, class: 'btn btn-primary' %>
+  <% if user_signed_in? %>
+    <%= link_to 'Edit account', edit_user_registration_path, class: 'btn btn-primary' %>
+    <%= link_to 'Sign out', destroy_user_session_path, class: 'btn btn-light', method: :delete %>
+  <% else %>
+    <%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
+    <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+  <% end %>
+</div>

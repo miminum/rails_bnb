@@ -11,6 +11,7 @@ class ListingsController < ApplicationController
     @over_100_listings = Listing.where('night_fee_cents > ? ', 9999)
 
     @europe_under_100_listings = @europe_listings - @over_100_listings
+    # @current_user_listings = Listing.where(host_id: current_user.id)
   end
 
   # GET /listings/1
@@ -33,8 +34,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
-    byebug
-    @dollar_conversion = Money.new(cents, "AUD").format
+    @listing.host_id = current_user.id
 
     respond_to do |format|
       if @listing.save
@@ -79,6 +79,6 @@ class ListingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
-      params.require(:listing).permit(:title, :street_address, :city, :country_code, :bed_count, :bedroom_count, :bathroom_count, :description, :night_fee_cents, :cleaning_fee_cents)
+      params.require(:listing).permit(:title, :street_address, :city, :country_code, :bed_count, :bedroom_count, :bathroom_count, :description, :night_fee_cents, :cleaning_fee_cents, :host_id)
     end
 end

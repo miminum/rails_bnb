@@ -7,6 +7,8 @@ class Listing < ApplicationRecord
       message: -> (listing, data) { "Invalid country code: #{listing.country_code}" }
     }
     validates :bed_count, numericality: { greater_than: 0}
+
+    belongs_to :user
     
     geocoded_by :full_address   # can also be an IP address
     after_validation :geocode          # auto-fetch coordinates
