@@ -12,6 +12,7 @@ class ListingsController < ApplicationController
 
     @europe_under_100_listings = @europe_listings - @over_100_listings
     # @current_user_listings = Listing.where(host_id: current_user.id)
+    @users = User.all  
   end
 
   # GET /listings/1

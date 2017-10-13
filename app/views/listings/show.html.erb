@@ -57,5 +57,12 @@
   <%= format_cents_for_country @listing.cleaning_fee_cents, @listing.country %>
 </p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<p>
+  <strong>Host id:</strong>
+  <%= @listing.host_id %>
+  <%= current_user.id %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing), class: 'btn btn-primary'%> 
+<%= link_to 'Back', listings_path, class: 'btn btn-primary'%>
+<%= link_to 'Message me!', conversations_path(sender_id: current_user.id, recipient_id: @listing.host_id), method: 'post'%>

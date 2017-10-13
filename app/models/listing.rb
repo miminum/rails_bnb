@@ -8,7 +8,7 @@ class Listing < ApplicationRecord
     }
     validates :bed_count, numericality: { greater_than: 0}
 
-    belongs_to :user
+    belongs_to :host, class_name: "User", foreign_key: 'user_id'
     
     geocoded_by :full_address   # can also be an IP address
     after_validation :geocode          # auto-fetch coordinates
